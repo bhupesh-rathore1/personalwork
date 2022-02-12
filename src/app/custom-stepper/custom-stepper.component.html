@@ -1,0 +1,34 @@
+<section>
+    <header>
+        <!-- <button class="example-nav-button" cdkStepperPrevious>&larr;</button> -->
+        <button
+          class="example-step"
+          [class.example-active]="selectedIndex === i"
+          *ngFor="let step of steps; let i = index"
+          (click)="Onclick(i)"
+        >
+          <!-- Step {{ i + 1 }} -->
+          {{step.label}}
+        </button>
+        <!-- <button class="example-nav-button" cdkStepperNext>&rarr;</button> -->
+     
+    </header>
+    <div [style.display]="selected ? 'block' : 'none'">
+        <br>
+        <div class=" justify-content-center">
+        <ng-container [ngTemplateOutlet]="selected?.content || null"></ng-container>
+        </div>
+    </div>
+    <footer class="example-step-navigation-bar">
+        <!-- <button class="example-nav-button" cdkStepperPrevious>&larr;</button>
+        <button
+          class="example-step"
+          [class.example-active]="selectedIndex === i"
+          *ngFor="let step of steps; let i = index"
+          (click)="Onclick(i)"
+        >
+          {{step.label}}
+        </button>
+        <button class="example-nav-button" cdkStepperNext>&rarr;</button> -->
+      </footer>
+</section>
